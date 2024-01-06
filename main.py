@@ -18,8 +18,8 @@ engine = AppEngine()
 
 
 # __________________________________________Set up Window________________________________________________#
-window = tkinter.Tk(screenName="Disappearing Text App", className="disappearing text app")
-window.title("Disappearing Text App")
+window = tkinter.Tk(screenName="PerfecType", className="disappearing text app")
+window.title("PerfecType")
 window.geometry("600x1500")
 window.maxsize(height=600, width=600)
 
@@ -109,7 +109,7 @@ def save():
 
 # ____________________________________________Main Canvas________________________________________________#
 #Heading label
-heading = tkinter.Label(text="Typing Trainer", font=HEADING_FONT, fg="black")
+heading = tkinter.Label(text="PerfecType", font=HEADING_FONT, fg="black")
 heading.config(anchor='n', pady=10)
 heading.grid(row=0, column=0, columnspan=3, sticky='n')
 
