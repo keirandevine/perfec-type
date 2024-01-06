@@ -16,20 +16,25 @@ class AppEngine:
 
 
     def count(self):
+        """Increment the count variable"""
         self.count_var += 1
         print(self.count_var)
 
 
 
     def check_test_over(self):
+        """Check if the count has reached the number that corresponds to chosen difficulty"""
         if self.count_var >= self.difficulty:
             self.test_over = True
 
 
     def reset_count(self, event):
+        """Reset the count variable. Triggered by a keyboard hook event which detects any keyboard activity"""
         self.count_var = 0
 
     def random_text(self):
+        """Gets a random story from an api and checks the number of characters is between 600 and
+        1200, then returns the story"""
         while True:
             response = requests.get(RANDOM_STORY_URL)
             story_data = response.json()
@@ -38,8 +43,8 @@ class AppEngine:
                 return story_data
 
     def calculate_score(self, typed_text):
-        """Takes the typed test as an input and calculates users words per minute, error count
-        returns final score"""
+        """Takes the typed text as an input and calculates users percentage completion and
+        similarity score"""
         #Calculate percentage complete
         rdm_text_list = self.random_text_var.split(" ")
         typed_text_list = typed_text.split(" ")
